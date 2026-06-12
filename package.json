@@ -1,0 +1,28 @@
+{
+  "name": "lnchary-art-gallery",
+  "version": "1.0.0",
+  "description": "LN Chary Portrait Artist Gallery & Commission Website",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lncharynarayandas-maker/lnchary-art-gallery.git"
+  },
+  "keywords": [
+    "portfolio",
+    "art-gallery",
+    "portrait-artist"
+  ],
+  "author": "LN Chary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lncharynarayandas-maker/lnchary-art-gallery/issues"
+  },
+  "homepage": "https://github.com/lncharynarayandas-maker/lnchary-art-gallery#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
