@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LN Chary — Portrait Artist | Commissions Open</title>
+  <meta name="description"
+    content="Hand-drawn portrait sketches and custom commission artwork by LN Chary, Hyderabad. Pencil, colored pencil portraits available.">
+  <meta name="keywords"
+    content="portrait artist Hyderabad, pencil sketch commission, custom portrait drawing, LN Chary art">
+  <meta name="author" content="LN Chary">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="LN Chary — Portrait Artist | Custom Commissions">
+  <meta property="og:description"
+    content="Portraits drawn with feeling. Yours could be next. Custom pencil, colored pencil & sketch commissions.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#hero" class="navbar__logo">LNChary</a>
+
+      <div class="navbar__toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="navbar__links" id="nav-links">
+        <a href="#gallery" class="navbar__link">Gallery</a>
+        <a href="#commissions" class="navbar__link">Commissions</a>
+        <a href="#about" class="navbar__link">About</a>
+        <a href="#testimonials" class="navbar__link">Testimonials</a>
+        <div class="navbar__commission-status">
+          <span class="navbar__commission-dot"></span>
+          Open for Commissions
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+
+  <!-- ═══════════════════════════════════
+       1. HERO SECTION
+       ═══════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="assets/hero-bg.png" alt="" aria-hidden="true" loading="eager">
+    </div>
+
+    <div class="hero__content">
+      <span class="hero__tagline reveal">Portraits drawn with feeling</span>
+      <h1 class="reveal reveal-delay-1">Art That Captures<br>Who You <em>Are</em></h1>
+      <p class="hero__subtitle reveal reveal-delay-2">Custom portrait commissions · Pencil · Colored Pencil · Sketch</p>
+      <div class="hero__ctas reveal reveal-delay-3">
+        <a href="#commissions" class="btn btn-primary btn-arrow">Commission a Portrait</a>
+        <a href="#gallery" class="btn btn-secondary">View Gallery</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll">
+      <div class="hero__scroll-icon"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       2. GALLERY SECTION
+       ═══════════════════════════════════ -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2>The Gallery</h2>
+        <div class="divider"></div>
+        <p>A curated collection of portraits and sketches — each one drawn with intention and soul.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="gallery__filters reveal">
+        <button class="gallery__filter active" data-filter="all">All</button>
+        <button class="gallery__filter" data-filter="portrait">Portraits</button>
+        <button class="gallery__filter" data-filter="pencil">Pencil</button>
+        <button class="gallery__filter" data-filter="colored">Colored Pencil</button>
+        <button class="gallery__filter" data-filter="sketch">Sketch</button>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="gallery__grid" id="gallery-grid">
+        <!-- Rendered by gallery.js -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       LIGHTBOX
+       ═══════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Close lightbox">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Previous artwork">‹</button>
+    <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Next artwork">›</button>
+
+    <div class="lightbox__content">
+      <img class="lightbox__image" id="lightbox-image" src="" alt="">
+      <div class="lightbox__info">
+        <h3 class="lightbox__title" id="lightbox-title"></h3>
+        <p class="lightbox__medium" id="lightbox-medium"></p>
+        <p class="lightbox__desc" id="lightbox-desc"></p>
+        <a href="#commission-form-section" class="btn btn-primary btn-sm btn-arrow"
+          onclick="document.getElementById('lightbox-close').click();">Want something like this? Commission me</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════
+       3. COMMISSIONS SECTION
+       ═══════════════════════════════════ -->
+  <section class="section" id="commissions">
+    <div class="container">
+
+      <!-- Section A — Introduction Banner -->
+      <div class="commission-banner reveal">
+        <h2>Own a One-of-a-Kind Portrait</h2>
+        <div class="divider"></div>
+        <p>I draw custom portraits from your photos. Pencil, colored pencil, or mixed. Delivered digitally or as a
+          physical print.</p>
+        <a href="#commission-form-section" class="btn btn-primary btn-arrow">Start Your Commission</a>
+      </div>
+
+      <!-- Section B — What I Offer -->
+      <div class="commission-cards">
+        <div class="card reveal">
+          <div class="card__icon">✏️</div>
+          <h4 class="card__title">Pencil Portrait</h4>
+          <p class="card__text">Classic black & white pencil portrait. Realistic, detailed, timeless.</p>
+          <div class="card__price">₹999 <span>starting from</span></div>
+          <button class="btn btn-secondary btn-sm btn-arrow" data-commission-type="pencil">Request This</button>
+        </div>
+
+        <div class="card reveal reveal-delay-1">
+          <div class="card__icon">🎨</div>
+          <h4 class="card__title">Colored Pencil Portrait</h4>
+          <p class="card__text">Vibrant colored pencil portraits full of warmth and life.</p>
+          <div class="card__price">₹1,499 <span>starting from</span></div>
+          <button class="btn btn-secondary btn-sm btn-arrow" data-commission-type="colored">Request This</button>
+        </div>
+
+        <div class="card reveal reveal-delay-2">
+          <div class="card__icon">🖌️</div>
+          <h4 class="card__title">Sketch / Caricature</h4>
+          <p class="card__text">Expressive loose sketches and stylized caricatures.</p>
+          <div class="card__price">₹799 <span>starting from</span></div>
+          <button class="btn btn-secondary btn-sm btn-arrow" data-commission-type="sketch">Request This</button>
+        </div>
+      </div>
+
+      <!-- Section C — How It Works -->
+      <div class="timeline reveal">
+        <div class="section__header">
+          <h3>How It Works</h3>
+          <div class="divider"></div>
+        </div>
+
+        <div class="timeline__steps">
+          <div class="timeline__step reveal">
+            <div class="timeline__number">1</div>
+            <p class="timeline__label">Fill the commission form</p>
+          </div>
+          <div class="timeline__step reveal reveal-delay-1">
+            <div class="timeline__number">2</div>
+            <p class="timeline__label">I review and confirm details + quote</p>
+          </div>
+          <div class="timeline__step reveal reveal-delay-2">
+            <div class="timeline__number">3</div>
+            <p class="timeline__label">50% advance payment</p>
+          </div>
+          <div class="timeline__step reveal reveal-delay-3">
+            <div class="timeline__number">4</div>
+            <p class="timeline__label">Artwork created (7–14 days)</p>
+          </div>
+          <div class="timeline__step reveal reveal-delay-4">
+            <div class="timeline__number">5</div>
+            <p class="timeline__label">Final delivery + remaining payment</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section D — Commission Form -->
+      <div id="commission-form-section">
+        <div class="commission-form-wrapper reveal" id="commission-form-container">
+          <h3>Request a Commission</h3>
+          <p>Fill out the form below and I'll get back to you within 24 hours.</p>
+
+          <form action="https://api.web3forms.com/submit" method="POST" id="commission-form" novalidate>
+            <input type="hidden" name="access_key" value="eb36c51e-6ec2-4367-a23b-2c8c5f6ca981">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="field-name">Your Name *</label>
+                <input class="form-input" type="text" id="field-name" name="name" placeholder="e.g. Priya Sharma"
+                  autocomplete="name" required>
+                <div class="form-error">Please enter your name</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="field-email">Email *</label>
+                <input class="form-input" type="email" id="field-email" name="email" placeholder="you@email.com"
+                  autocomplete="email" required>
+                <div class="form-error">Please enter a valid email</div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="field-whatsapp">WhatsApp Number *</label>
+                <input class="form-input" type="tel" id="field-whatsapp" name="whatsapp" placeholder="+91 98765 43210"
+                  autocomplete="tel">
+                <div class="form-error">Please enter a valid phone number</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="field-type">Type of Commission *</label>
+                <select class="form-select" id="field-type" name="commission-type">
+                  <option value="">Select a type...</option>
+                  <option value="pencil">Pencil Portrait</option>
+                  <option value="colored">Colored Pencil Portrait</option>
+                  <option value="sketch">Sketch / Caricature</option>
+                  <option value="not-sure">Not Sure Yet</option>
+                </select>
+                <div class="form-error">Please select a commission type</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="field-subjects">Number of Subjects</label>
+              <select class="form-select" id="field-subjects" name="subjects">
+                <option value="1">1 Person</option>
+                <option value="2">2 People</option>
+                <option value="group">Group (3+)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Reference Photo</label>
+              <div class="file-upload">
+                <input class="file-upload__input" type="file" id="reference-photo" name="reference" accept="image/*">
+                <div class="file-upload__icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                  </svg>
+                </div>
+                <p class="file-upload__text"><span>Click to upload</span> or drag and drop<br>JPG, PNG up to 10MB</p>
+                <div class="file-upload__preview" id="file-preview">
+                  <img id="file-preview-img" src="" alt="Preview">
+                  <p id="file-name" class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="field-message">Special Instructions / Message</label>
+              <textarea class="form-textarea" id="field-message" name="message"
+                placeholder="Tell me about the portrait you'd like — style preferences, background, mood, etc." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full btn-arrow">Send My Commission Request</button>
+          </form>
+        </div>
+
+        <!-- Success State -->
+        <div class="form-success" id="form-success">
+          <div class="form-success__icon">🎉</div>
+          <h3>Request Sent Successfully!</h3>
+          <p class="text-muted" style="margin-top: 0.5rem;">Thank you for your interest! I'll review your request and
+            get back to you within 24 hours via email or WhatsApp.</p>
+          <div style="margin-top: 2rem;">
+            <a href="#gallery" class="btn btn-secondary">Browse the Gallery</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section E — FAQ -->
+      <div class="reveal" style="margin-top: var(--space-3xl);">
+        <div class="section__header">
+          <h3>Frequently Asked Questions</h3>
+          <div class="divider"></div>
+        </div>
+
+        <div class="accordion" id="faq-accordion">
+          <div class="accordion__item">
+            <button class="accordion__trigger">
+              <span>How long does a commission take?</span>
+              <span class="accordion__icon">+</span>
+            </button>
+            <div class="accordion__body">
+              <div class="accordion__content">
+                Most portraits take 7–14 days depending on complexity. Rush orders (3–5 days) are available for an
+                additional fee. I'll give you an exact timeline after reviewing your reference photo and requirements.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger">
+              <span>Do you ship physical copies?</span>
+              <span class="accordion__icon">+</span>
+            </button>
+            <div class="accordion__body">
+              <div class="accordion__content">
+                Yes! I offer both digital delivery (high-resolution scan) and physical prints. Physical prints are
+                shipped across India. International shipping can be arranged on request. Shipping costs are calculated
+                separately.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger">
+              <span>Can I see progress before it's finished?</span>
+              <span class="accordion__icon">+</span>
+            </button>
+            <div class="accordion__body">
+              <div class="accordion__content">
+                Absolutely! I share work-in-progress photos at key stages so you can provide feedback. One round of
+                minor revisions is included in every commission.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger">
+              <span>What reference photos work best?</span>
+              <span class="accordion__icon">+</span>
+            </button>
+            <div class="accordion__body">
+              <div class="accordion__content">
+                Clear, well-lit photos with visible facial details work best. Natural lighting is ideal. Avoid heavily
+                filtered or blurry images. I can work with multiple reference photos to create the perfect composition.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger">
+              <span>How do I make payment?</span>
+              <span class="accordion__icon">+</span>
+            </button>
+            <div class="accordion__body">
+              <div class="accordion__content">
+                I accept UPI, bank transfer, and PayPal (for international clients). 50% is collected upfront to begin
+                work, and the remaining 50% is due upon completion before delivery.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       4. ABOUT SECTION
+       ═══════════════════════════════════ -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image-wrapper reveal">
+          <img class="about__image" src="assets/artist-profile.jpg" alt="LN Chary — Portrait Artist" loading="lazy">
+        </div>
+        <div class="about__content">
+          <h2 class="reveal">Hi, I'm <span class="text-accent">LNChary</span></h2>
+          <p class="reveal reveal-delay-1">I'm a design student from Hyderabad with a deep love for portrait art and
+            hand-drawn sketches. Every face tells a story — I help you preserve yours.</p>
+          <p class="reveal reveal-delay-2">From the texture of graphite on paper to the vibrant warmth of colored
+            pencils, I pour intention into every stroke. My work isn't just about likeness — it's about capturing the
+            essence, the emotion, the quiet moments that make a person who they are.</p>
+          <div class="about__tags reveal reveal-delay-3">
+            <span class="badge">Portrait Art</span>
+            <span class="badge">Pencil</span>
+            <span class="badge">Colored Pencil</span>
+            <span class="badge">Animation</span>
+            <span class="badge">Digital Art</span>
+          </div>
+          <a href="#commissions" class="btn btn-primary btn-arrow reveal reveal-delay-4">Commission My Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       5. TESTIMONIALS SECTION
+       ═══════════════════════════════════ -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2>What Clients Say</h2>
+        <div class="divider"></div>
+        <p>Real words from people who trusted me with their portraits.</p>
+      </div>
+
+      <div class="testimonials__grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__quote-icon">"</div>
+          <p class="testimonial-card__text">Chary captured my grandmother's portrait so perfectly — the warmth in her
+            eyes, the gentle smile. My whole family was moved to tears. It's now the centerpiece of our living room.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">A</div>
+            <div>
+              <div class="testimonial-card__name">Akshay</div>
+              <div class="testimonial-card__role">Pencil Portrait Commission</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-card__quote-icon">"</div>
+          <p class="testimonial-card__text">I gifted a colored pencil portrait to my partner for our anniversary — it
+            was the most personal, meaningful gift I've ever given. Chary's attention to detail is incredible.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">R</div>
+            <div>
+              <div class="testimonial-card__name">Uday</div>
+              <div class="testimonial-card__role">Colored Pencil Commission</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-card__quote-icon">"</div>
+          <p class="testimonial-card__text">Quick, communicative, and insanely talented. Got a sketch of my dog done in
+            under a week. The likeness was spot on and the energy was just *chef's kiss*.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">P</div>
+            <div>
+              <div class="testimonial-card__name">Krishna</div>
+              <div class="testimonial-card__role">Sketch Commission</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonials__cta reveal">
+        <p class="text-muted" style="margin-bottom: 1.5rem; font-size: 1.05rem;">Be the next happy client →</p>
+        <a href="#commissions" class="btn btn-primary btn-arrow">Commission a Portrait</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       6. FOOTER
+       ═══════════════════════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="footer__logo">Chary</span>
+          <span class="footer__tagline">Portraits drawn with feeling.</span>
+        </div>
+
+        <div class="footer__links">
+          <a href="#gallery" class="footer__link">Gallery</a>
+          <a href="#commissions" class="footer__link">Commissions</a>
+          <a href="#about" class="footer__link">About</a>
+          <a href="#testimonials" class="footer__link">Testimonials</a>
+        </div>
+
+        <div class="footer__social">
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer__social-link"
+            aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </a>
+          <!-- Behance -->
+          <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="footer__social-link"
+            aria-label="Behance">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M7.5 11c1.38 0 2.5-1.12 2.5-2.5S8.88 6 7.5 6H3v5h4.5zm0 2H3v5h4.5C8.88 18 10 16.88 10 15.5S8.88 13 7.5 13zM1 4h6.5C10 4 12 6 12 8.5c0 1.38-.56 2.63-1.46 3.5.9.87 1.46 2.12 1.46 3.5C12 18 10 20 7.5 20H1V4zm20 2h-6v2h6V6zm-3 6c-2.21 0-4 1.79-4 4s1.79 4 4 4c1.47 0 2.76-.8 3.45-2h-2.29c-.35.39-.87.63-1.45.63-.97 0-1.77-.7-1.94-1.63H23c.03-.19.05-.39.05-.59v-.41C23 13.79 21.21 12 19 12h-1zm-1.9 3c.17-.93.97-1.63 1.94-1.63s1.77.7 1.94 1.63H16.1z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 LN Chary · Hyderabad, India</p>
+        <div class="footer__status">
+          <span>✦</span> Open for commissions
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════
+       BACK TO TOP
+       ═══════════════════════════════════ -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+
+  <!-- Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/form.js"></script>
+</body>
+
+</html>
