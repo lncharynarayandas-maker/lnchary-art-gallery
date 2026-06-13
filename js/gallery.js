@@ -173,9 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       item.innerHTML = `
         ${art.recent ? '<span class="gallery__badge">Recent Work</span>' : ''}
-        <img class="gallery__item-image" src="${art.image}" alt="${art.title} — ${art.medium}" loading="lazy">
+        <img class="gallery__item-image" src="${art.image}" alt="${art.medium}" loading="lazy">
         <div class="gallery__overlay">
-          <div class="gallery__overlay-title">${art.title}</div>
           <div class="gallery__overlay-medium">${art.medium}</div>
         </div>
       `;
@@ -205,7 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Lightbox ── */
   const lightbox = document.getElementById('lightbox');
   const lightboxImage = document.getElementById('lightbox-image');
-  const lightboxTitle = document.getElementById('lightbox-title');
   const lightboxMedium = document.getElementById('lightbox-medium');
   const lightboxDesc = document.getElementById('lightbox-desc');
   const lightboxClose = document.getElementById('lightbox-close');
@@ -228,8 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateLightboxContent() {
     const art = artworks[currentLightboxIndex];
     lightboxImage.src = art.image;
-    lightboxImage.alt = art.title;
-    lightboxTitle.textContent = art.title;
+    lightboxImage.alt = art.medium;
     lightboxMedium.textContent = art.medium;
     lightboxDesc.textContent = art.description;
   }

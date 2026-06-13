@@ -145,45 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  /* ── File upload preview ── */
-  const fileInput = document.getElementById('reference-photo');
-  const previewContainer = document.getElementById('file-preview');
-  const previewImage = document.getElementById('file-preview-img');
-  const fileName = document.getElementById('file-name');
-
-  if (fileInput) {
-    fileInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (!file) {
-        previewContainer.classList.remove('active');
-        return;
-      }
-
-      // Validate file type
-      if (!file.type.startsWith('image/')) {
-        alert('Please upload an image file (JPG, PNG, etc.)');
-        fileInput.value = '';
-        return;
-      }
-
-      // Validate file size (max 10MB)
-      if (file.size > 10 * 1024 * 1024) {
-        alert('File is too large. Please upload an image under 10MB.');
-        fileInput.value = '';
-        return;
-      }
-
-      // Show preview
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        previewImage.src = event.target.result;
-        fileName.textContent = file.name;
-        previewContainer.classList.add('active');
-      };
-      reader.readAsDataURL(file);
-    });
-  }
-
 
   /* ── FAQ Accordion ── */
   const accordionTriggers = document.querySelectorAll('.accordion__trigger');
